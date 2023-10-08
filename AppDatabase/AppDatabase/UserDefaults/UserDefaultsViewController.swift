@@ -7,23 +7,24 @@
 
 import UIKit
 
-class UserDefaultsViewController: UIViewController {
-
+final class UserDefaultsViewController: UIViewController {
+    @IBOutlet weak var savedTextLabel: UILabel!
+    @IBOutlet weak var toBeSavedTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        savedTextLabel.text = UserDefaults.standard.string(forKey: Key.default)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func touchUpSaveButton() {
+        UserDefaults.standard.set(toBeSavedTextField.text, forKey: Key.default)
+        savedTextLabel.text = UserDefaults.standard.string(forKey: Key.default)
     }
-    */
+}
 
+private extension UserDefaultsViewController {
+    @frozen enum Key {
+        static let `default` = "default"
+    }
 }
