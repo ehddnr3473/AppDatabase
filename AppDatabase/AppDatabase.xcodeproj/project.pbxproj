@@ -17,6 +17,8 @@
 		231DEE132ACDB4BF00C165B4 /* UserDefaultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DEE122ACDB4BF00C165B4 /* UserDefaultsViewController.swift */; };
 		231DEE152ACDB4CC00C165B4 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DEE142ACDB4CC00C165B4 /* CoreDataViewController.swift */; };
 		231DEE172ACDB4E100C165B4 /* FileSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DEE162ACDB4E100C165B4 /* FileSystemViewController.swift */; };
+		23672B422AD4351000FEE7D5 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23672B412AD4351000FEE7D5 /* CoreDataUtil.swift */; };
+		23672B442AD4366F00FEE7D5 /* TestHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23672B432AD4366F00FEE7D5 /* TestHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		231DEE122ACDB4BF00C165B4 /* UserDefaultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsViewController.swift; sourceTree = "<group>"; };
 		231DEE142ACDB4CC00C165B4 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		231DEE162ACDB4E100C165B4 /* FileSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemViewController.swift; sourceTree = "<group>"; };
+		23672B412AD4351000FEE7D5 /* CoreDataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtil.swift; sourceTree = "<group>"; };
+		23672B432AD4366F00FEE7D5 /* TestHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			children = (
 				231DEE002ACDADC800C165B4 /* AppDatabase.xcdatamodeld */,
 				231DEE142ACDB4CC00C165B4 /* CoreDataViewController.swift */,
+				23672B412AD4351000FEE7D5 /* CoreDataUtil.swift */,
+				23672B432AD4366F00FEE7D5 /* TestHistory.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -190,12 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23672B442AD4366F00FEE7D5 /* TestHistory.swift in Sources */,
 				231DEDFC2ACDADC800C165B4 /* MainViewController.swift in Sources */,
 				231DEE172ACDB4E100C165B4 /* FileSystemViewController.swift in Sources */,
 				231DEE132ACDB4BF00C165B4 /* UserDefaultsViewController.swift in Sources */,
 				231DEDF82ACDADC800C165B4 /* AppDelegate.swift in Sources */,
 				231DEE152ACDB4CC00C165B4 /* CoreDataViewController.swift in Sources */,
 				231DEE022ACDADC800C165B4 /* AppDatabase.xcdatamodeld in Sources */,
+				23672B422AD4351000FEE7D5 /* CoreDataUtil.swift in Sources */,
 				231DEDFA2ACDADC800C165B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,23 +7,55 @@
 
 import UIKit
 
-class CoreDataViewController: UIViewController {
+final class CoreDataViewController: UIViewController {
 
+    @IBOutlet weak var toBeSavedTextField: UITextField!
+    
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var historyTableView: UITableView!
+    
+    private var histories = [TestHistory]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        fetch()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func touchUpSaveButton() {
+        do {
+            try CoreDataUtil.saveHistory(TestHistory(text: toBeSavedTextField.text ?? "", date: Date()))
+            fetch()
+        } catch {
+            
+        }
     }
-    */
+}
 
+private extension CoreDataViewController {
+    func fetch() {
+        do {
+            histories = try CoreDataUtil.fetchHistory()
+            
+            DispatchQueue.main.async {
+                self.historyTableView.reloadData()
+            }
+        } catch {
+            
+        }
+    }
+}
+
+extension CoreDataViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        histories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = historyTableView.dequeueReusableCell(withIdentifier: "historyCell", for: indexPath)
+        
+        cell.textLabel?.text = "Text: \(histories[indexPath.row].text) Date: \(histories[indexPath.row].date.description)"
+        
+        return cell
+    }
 }

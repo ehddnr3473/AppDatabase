@@ -89,14 +89,64 @@
                     <view key="view" contentMode="scaleToFill" id="mpJ-1B-FvH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfC-Sj-4xO">
+                                <rect key="frame" x="100" y="267" width="193" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="저장하기"/>
+                                <connections>
+                                    <action selector="touchUpSaveButton" destination="s3A-iO-9K0" eventType="touchUpInside" id="I0W-np-lo5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="저장할 문자열을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOa-lo-qTH">
+                                <rect key="frame" x="20" y="183" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Krw-rH-zvM">
+                                <rect key="frame" x="8" y="362" width="377" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="OQt-lV-cyc">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="44.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OQt-lV-cyc" id="l9o-61-LgY">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="44.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="s3A-iO-9K0" id="Qm2-NQ-Oaz"/>
+                                    <outlet property="delegate" destination="s3A-iO-9K0" id="RKS-XF-NEx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="U4n-ew-GzB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Krw-rH-zvM" firstAttribute="leading" secondItem="U4n-ew-GzB" secondAttribute="leading" constant="8" id="2em-Cd-1ZH"/>
+                            <constraint firstItem="U4n-ew-GzB" firstAttribute="trailing" secondItem="tfC-Sj-4xO" secondAttribute="trailing" constant="100" id="2xo-fx-rOC"/>
+                            <constraint firstItem="NOa-lo-qTH" firstAttribute="top" secondItem="U4n-ew-GzB" secondAttribute="top" constant="80" id="7Hs-hM-ueC"/>
+                            <constraint firstItem="Krw-rH-zvM" firstAttribute="top" secondItem="tfC-Sj-4xO" secondAttribute="bottom" constant="60" id="Mvx-iK-Xc4"/>
+                            <constraint firstItem="tfC-Sj-4xO" firstAttribute="top" secondItem="NOa-lo-qTH" secondAttribute="bottom" constant="50" id="Nlc-f0-3po"/>
+                            <constraint firstItem="U4n-ew-GzB" firstAttribute="bottom" secondItem="Krw-rH-zvM" secondAttribute="bottom" constant="328" id="RUF-bg-8JL"/>
+                            <constraint firstItem="U4n-ew-GzB" firstAttribute="trailing" secondItem="Krw-rH-zvM" secondAttribute="trailing" constant="8" id="Rf0-jg-EL1"/>
+                            <constraint firstItem="U4n-ew-GzB" firstAttribute="trailing" secondItem="NOa-lo-qTH" secondAttribute="trailing" constant="20" id="eH2-9j-Mes"/>
+                            <constraint firstItem="NOa-lo-qTH" firstAttribute="leading" secondItem="U4n-ew-GzB" secondAttribute="leading" constant="20" id="tnt-Ra-H7p"/>
+                            <constraint firstItem="tfC-Sj-4xO" firstAttribute="leading" secondItem="U4n-ew-GzB" secondAttribute="leading" constant="100" id="yRI-1L-G2u"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TZH-dl-Gfm"/>
+                    <connections>
+                        <outlet property="historyTableView" destination="Krw-rH-zvM" id="jL1-zh-pvR"/>
+                        <outlet property="saveButton" destination="tfC-Sj-4xO" id="nTF-Q2-WjF"/>
+                        <outlet property="toBeSavedTextField" destination="NOa-lo-qTH" id="WKB-hJ-mlM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khz-vX-hGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="-4"/>
+            <point key="canvasLocation" x="2072.5190839694656" y="-4.2253521126760569"/>
         </scene>
         <!--User Defaults View Controller-->
         <scene sceneID="F7R-t0-NWS">
