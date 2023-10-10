@@ -64,8 +64,8 @@ final class CoreDataUtil {
 
 private extension CoreDataUtil {
     @frozen enum Name {
-        static let container = "AppDatabase"
-        static let entity = "TestHistory"
+        static let container = "Model"
+        static let entity = "History"
         
         @frozen enum Attribute {
             static let text = "text"
