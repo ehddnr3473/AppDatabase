@@ -21,12 +21,10 @@ struct KeyChainUtil {
             kSecValueData: data
         ]
         
-        var result: CFTypeRef? // a reference to the newly added items.
+        var result: CFTypeRef? // a reference to the newly added items. - nil
         
         // SecItemAdd()가 반환하는 결과: Security Framework Result Codes 참고
         let status = SecItemAdd(query as CFDictionary, &result)
-        
-        dump(result)
         
         if status == errSecSuccess {
             print("데이터가 Keychain에 추가되었습니다.")
@@ -121,6 +119,36 @@ private extension KeyChainUtil {
             print("데이터가 KeyChain에서 업데이트되었습니다.")
         } else {
             print("데이터를 KeyChain에서 업데이트하지 못했습니다.")
+        }
+    }
+}
+
+private extension KeyChainUtil {
+    func writeMultipleItemsToKeyChain(_ service: String, _ items: [(key: String, text: String)]) {
+        var statuses = [OSStatus]()
+        
+        for item in items {
+            guard let data = item.text.data(using: .utf8) else { return }
+            
+            let query: [CFString: Any] = [
+                kSecClass: kSecClassGenericPassword,
+                kSecAttrService: service,
+                kSecAttrAccount: item.key,
+                kSecValueData: data
+            ]
+            
+            statuses.append(SecItemAdd(query as CFDictionary, nil))
+            
+        }
+        
+        if statuses.allSatisfy({ $0 == errSecSuccess }) {
+            print("Success")
+        } else {
+            for (index, status) in statuses.enumerated() {
+                if status != errSecSuccess {
+                    print("\(index + 1)번째 데이터 쓰기 실패. 오류 코드: \(status)")
+                }
+            }
         }
     }
 }
