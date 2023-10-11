@@ -19,6 +19,8 @@
 		23672B422AD4351000FEE7D5 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23672B412AD4351000FEE7D5 /* CoreDataUtil.swift */; };
 		23672B442AD4366F00FEE7D5 /* TestHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23672B432AD4366F00FEE7D5 /* TestHistory.swift */; };
 		236E52602AD58AD200C3BBC3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 236E525E2AD58AD200C3BBC3 /* Model.xcdatamodeld */; };
+		236E52642AD66A8B00C3BBC3 /* KeyChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E52632AD66A8B00C3BBC3 /* KeyChainViewController.swift */; };
+		236E52662AD66B5500C3BBC3 /* KeyChainUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E52652AD66B5500C3BBC3 /* KeyChainUtil.swift */; };
 		23C239F12AD58906004D63E2 /* FileSystemUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C239F02AD58906004D63E2 /* FileSystemUtil.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		23672B412AD4351000FEE7D5 /* CoreDataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtil.swift; sourceTree = "<group>"; };
 		23672B432AD4366F00FEE7D5 /* TestHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHistory.swift; sourceTree = "<group>"; };
 		236E525F2AD58AD200C3BBC3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		236E52632AD66A8B00C3BBC3 /* KeyChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainViewController.swift; sourceTree = "<group>"; };
+		236E52652AD66B5500C3BBC3 /* KeyChainUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainUtil.swift; sourceTree = "<group>"; };
 		23C239F02AD58906004D63E2 /* FileSystemUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +74,7 @@
 		231DEDF62ACDADC800C165B4 /* AppDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				236E52622AD6689C00C3BBC3 /* KeyChain */,
 				231DEE1B2ACDB56D00C165B4 /* Application */,
 				231DEE1A2ACDB56100C165B4 /* FileSystem */,
 				231DEE192ACDB55A00C165B4 /* CoreData */,
@@ -126,6 +131,15 @@
 				231DEE082ACDADC900C165B4 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		236E52622AD6689C00C3BBC3 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				236E52632AD66A8B00C3BBC3 /* KeyChainViewController.swift */,
+				236E52652AD66B5500C3BBC3 /* KeyChainUtil.swift */,
+			);
+			path = KeyChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +220,8 @@
 				231DEE132ACDB4BF00C165B4 /* UserDefaultsViewController.swift in Sources */,
 				231DEDF82ACDADC800C165B4 /* AppDelegate.swift in Sources */,
 				231DEE152ACDB4CC00C165B4 /* CoreDataViewController.swift in Sources */,
+				236E52662AD66B5500C3BBC3 /* KeyChainUtil.swift in Sources */,
+				236E52642AD66A8B00C3BBC3 /* KeyChainViewController.swift in Sources */,
 				236E52602AD58AD200C3BBC3 /* Model.xcdatamodeld in Sources */,
 				23672B422AD4351000FEE7D5 /* CoreDataUtil.swift in Sources */,
 				231DEDFA2ACDADC800C165B4 /* SceneDelegate.swift in Sources */,
